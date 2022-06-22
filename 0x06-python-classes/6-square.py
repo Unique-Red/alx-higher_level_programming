@@ -1,30 +1,15 @@
 #!/usr/bin/python3
-"""Write a class Square that defines a square by:
-(based on 5-square.py)
-"""
-
 class Square:
-    """Square class with a private attribute -
-    size.
-
-    """
-
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes the size variable as a private
-        instance artribute
-
-        """
         self.__size = size
         self.__position = position
 
     @property
     def size(self):
-        """Instantiation with optional size of square"""
         return self.__size
 
     @size.setter
     def size(self, size_value):
-        """Gets the size of the square"""
         self.__size = size_value
 
         if not isinstance(size_value, int):
@@ -34,14 +19,12 @@ class Square:
 
     @property
     def position(self):
-        """Get/set the current position of the square."""
         return self.__position
 
     @position.setter
     def position(self, size_value):
         """must be a tuple of 2 positive integers,
         otherwise raise a TypeError exception
-
         """
         self.__position = size_value
 
