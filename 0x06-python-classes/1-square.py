@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Class Square with size"""
+
 
 class Square:
-    def __init__(self, size):
-        self.__size = size
+    """Class to create a square with it size"""
+
+    def __init__(self, square_size):
+        """Constructor of the Square"""
+        self.__size = square_size
