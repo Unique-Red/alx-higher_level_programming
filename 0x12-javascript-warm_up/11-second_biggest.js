@@ -1,20 +1,13 @@
 #!/usr/bin/node
 
-if (process.argv.length < 4) {
-  console.log('0');
-} else {
-  const arr = process.argv.slice(2);
-  let secondElement = Number.MIN_VALUE;
-  let maxValue = Number.MAX_VALUE;
+const { argv } = require('process');
+const args = argv.slice(2);
+let result = 0;
+let finalArray = [];
 
-  arr.forEach(function (element) {
-    element = parseInt(element);
-    if (element > maxValue) {
-      secondElement = maxValue;
-      maxValue = element;
-    } else if (secondElement < element && maxValue > element) {
-      secondElement = element;
-    }
-  });
-  console.log(secondElement);
+if (args.length > 1) {
+  finalArray = [...new Set(args.map((e) => parseInt(e)).sort((a, b) => b - a))];
+  result = finalArray.length > 1 ? finalArray[1] : finalArray[0];
 }
+
+console.log(result);
