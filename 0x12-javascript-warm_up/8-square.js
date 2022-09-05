@@ -1,20 +1,11 @@
 #!/usr/bin/node
 
-/**
- * a script that prints a square
- */
-const inputSize = parseInt(process.argv[2]);
-let squareIndicator = '';
+const { argv } = require('process');
+const size = parseInt(argv[2]);
 
-if (process.argv.length < 3 || isNaN(inputSize)) {
-  console.log('Missing size');
-}
-for (let i = 0; i < inputSize; i++) {
-  for (let j = 0; j < inputSize; j++) {
-    squareIndicator += 'X';
-  }
-  if (i !== inputSize - 1) {
-    squareIndicator += '\n';
-  }
-}
-console.log(squareIndicator);
+const printSquare = (size) => {
+  const row = 'X'.repeat(size);
+  for (let i = 0; i < size; i++) console.log(row);
+};
+
+Number.isInteger(size) ? printSquare(size) : console.log('Missing size');
