@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """urllib usage"""
 import urllib.request
-import urllib.parse
 
 
 if __name__ == "__main__":
